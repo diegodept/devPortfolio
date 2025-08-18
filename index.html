@@ -10,8 +10,6 @@
 <body>
 
     <!-- Navbar ---------------------------------- -->
-
-
   
 
     <header class="header">
@@ -26,26 +24,102 @@
             <a href="#">Projects</a>
             <a href="#">Contact</a>
         </nav>
-
     </header>
-
-
-
-
-
-
 
     <!-- Navbar ---------------------------------- -->
 
 
 
 
+    <!-- Landing -------------------------------------- -->
+
+<section class="landing" id="home">
+  <div class="landing-left">
+    <h1 class="landing-title">Hey, I'm<br>Diego Soto</h1>
+  </div>
+
+  <div class="landing-center">
+    <img src="/images/yo2.jpg" alt="Landing Image" class="landing-image" />
+  </div>
+
+  <div class="landing-right">
+    <h1 class="landing-subtitle">
+      A Web Developer <br />
+      Based in NZ
+    </h1>
+  </div>
+</section>
+
+
+
+
+
+    <!-- Landing -------------------------------------- -->
+
+
+
+    
+
+ <section class="bio" id="about">
+  <h1 id="bio-title">BIO</h1>
+  <h2>
+    I recently completed a diploma in web development, where I focused on building modern, responsive websites using tools like React, JavaScript, and Tailwind CSS.
+    Through my studies, I designed and launched a real-world project that combined my technical skills with entrepreneurship — an experience that deepened my love for crafting clean, functional, and engaging digital experiences.
+    Let’s connect! I’m open to freelance work, collaborations, or full-time opportunities.
+  </h2>
+
+</section>
 
 
 
 
 
 
+
+
+
+
+
+
+<script src="styles.js"></script>
+  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
+
+  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+  <!-- <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/bundled/lenis.min.js"></script> -->
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/split-type"></script>
+
+
+<script>
+  gsap.registerPlugin(ScrollTrigger);
+
+  const bioSections = document.querySelectorAll('.bio h2');
+
+bioSections.forEach((section) => {
+  const text = new SplitType(section, { types: 'words' }); // ✅ split by words
+
+  gsap.from(text.words, {
+    scrollTrigger: {
+      trigger: section,
+      start: 'top 80%',
+      end: 'top 20%',
+      scrub: 1,
+    },
+    opacity: 0.2,
+    y: 0,
+    stagger: 0.5, // ✅ smooth wave effect
+  });
+});
+
+
+</script>
+
+
+  
 
 
 
@@ -55,13 +129,7 @@
     
 
 
-  <script src="styles.js"></script>
-  <script src="https://unpkg.com/boxicons@2.1.4/dist/boxicons.js"></script>
-
-  <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
-  <script src="https://unpkg.com/split-type"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.39/bundled/lenis.min.js"></script>
+  
 
 </body>
 </html>
