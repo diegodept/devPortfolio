@@ -1,12 +1,17 @@
 /* RESET */
 @font-face {
   font-family: Handsome;
-  src: url(/fonts/Hanson-Bold.otf);
+  src: url(/fonts/Hanson-Bold.ttf);
 }
 
 @font-face {
     font-family: Newake;
     src: url(/fonts/newake-demo-400.otf);
+}
+
+@font-face {
+  font-family: humanism;
+  src: url(/fonts/humanism-bolddemo.otf);
 }
 
 * {
@@ -113,22 +118,23 @@
 }
 
 .landing-title {
-  font-family: 'Handsome', sans-serif;
-  
+  font-family: 'humanism', sans-serif;
   text-transform: uppercase;
-  color: black;
-  text-align: center;
-  font-size: 3rem;
+  color: #222;
   font-weight: bold;
+  text-align: center;
+  font-size: 6rem;
   margin-bottom: 2rem;
   z-index: 2;
 }
 
 .landing-subtitle {
-  font-family: 'Handsome', sans-serif;
+  font-family: 'humanism', sans-serif;
   text-transform: uppercase;
+  color: #222;
+  font-weight: 700;
   text-align: center;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-top: 2rem;
   z-index: 2;
 }
@@ -147,6 +153,7 @@
   height: 90vh;
   object-fit: cover;
   object-position: center;
+  /* background-attachment: fixed; */
 }
 
 
@@ -211,21 +218,115 @@
 
 .bio h1 {
   margin-bottom: 30px;
-  font-family: "Handsome", sans-serif;
+  font-family: "humanism", sans-serif;
+  font-weight: bold;
+  font-size: rem;
   color: black;
   text-transform: uppercase;
 }
 
 .bio h2 {
-  font-family: "Handsome", sans-serif;
-  /* font-weight: 800; */
-  font-size: 2.5rem;
+  font-family: "humanism", sans-serif;
+  font-weight: 300;
+  font-size: 2rem;
+  color: #222;
+  line-height: 2.5rem;
+  max-width: 80%;
+  margin: 0 auto;
+  text-transform: uppercase;
+}
+
+
+.technologies {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 2rem;
+  text-align: center;
+  box-sizing: border-box;
+  background: white;
+}
+
+.technologies h1 {
+  margin-bottom: 30px;
+  font-family: "humanism", sans-serif;
+  font-weight: bold;
+  font-size: 5rem;
+  color: black;
+  text-transform: uppercase;
+}
+
+.technologies h2 {
+  font-family: "humanism", sans-serif;
+  font-weight: 900;
+  font-size: 3rem;
   color: #222;
   line-height: 3rem;
   max-width: 90%;
   margin: 0 auto;
   text-transform: uppercase;
 }
+
+
+
+
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 2rem;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  padding: 0 15vw;
+}
+
+.projects-left {
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.section-number {
+  font-size: 8rem;
+  font-family: "Space Mono", monospace;
+  color: rgba(0, 0, 0, 0.1);
+  line-height: 1;
+}
+
+.projects p {
+  display: flex;
+  justify-content: center;
+  font-family: "Roboto Flex", sans-serif;
+  font-weight: 800;
+  font-size: 30px;
+  color: #222;
+  line-height: 2rem;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
+.projects-right {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.projects-right h2,
+.projects-right h2 a {
+  text-align: left;
+  margin-left: 0;
+}
+
+
+
+
+
+
+
 
 /* ------------------- BREAKPOINTS ------------------- */
 @media (max-width: 768px) {
@@ -271,17 +372,24 @@
     gap: 2rem;
   }
 
-  .landing-left h1,
-  .landing-right h1 {
-    text-align: center;
-    left: 0;
-    right: 0;
-    position: static; /* remove overlap on small screens */
+  .landing-title {
+
   }
 
-  .landing-image {
-    width: 200px;
-    height: 200px;
-  }
+.landing-image-wrapper {
+  width: 100%;              /* take full width of mobile screen */
+  max-width: 200px;         /* don’t let it get too big */
+  aspect-ratio: 1 / 1;      /* force it to always be square */
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
 }
 
+.landing-image-wrapper img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        /* crop nicely instead of stretching */
+}
+ 
+
+}
